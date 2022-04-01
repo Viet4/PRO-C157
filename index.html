@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Virtual Comics Store</title>
+
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="js/y-axis.js"></script>
+        <script src="js/comics.js"></script>
+    </head>
+    <body>
+        <a-scene id="main-scene" renderer="colorManagement: true;">
+            <!--Camera-->
+            <a-entity
+                id="camera"
+                camera
+                look-controls="enabled:false"
+                wasd-controls="enabled:false"
+                y-axis-controls="enabled:false"
+            ></a-entity>
+
+            <!--Sky-->
+            <a-sky 
+                id="main-container"
+                radius="5000"
+                color="#90CAF9"
+            ></a-sky>
+            <a-plane
+                position="0 -16 -31"
+                color="#89A4B1"
+                width="120"
+                height="20" 
+            ></a-plane>
+
+            <!--Comics-->
+            <a-entity 
+                id="comics-container"
+                comics
+            ></a-entity>
+            
+            <!--Titles-->
+            <a-entity
+                id="title"
+                position="0 0.7 -1"
+                text="
+                    value: Virtual Comics Store;
+                    width: 2.5;
+                    font: exo2bold;
+                    align: center;
+                    color: #000;
+                "
+            ><a-entity
+                id="subtitle"
+                position="0 -0.12 0"
+                text="
+                    value: Get Your Favourite Comics;
+                    width: 1;
+                    font: dejavu;
+                    align: center;
+                    color: #000;
+                "
+            ></a-entity></a-entity>
+        </a-scene>
+    </body>
+</html>
